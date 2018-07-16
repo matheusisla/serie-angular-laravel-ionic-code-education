@@ -1,0 +1,20 @@
+<div class="row">
+    <!-- a interrogação caso null ele não exibe -->
+    <div class="col-md-12"><h1>Incluir foto: {{album?.name}}</h1></div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="name">
+            <!-- [(ngmodel)] entre esses simbolos tem como objetivo em interligar
+            a variavel que foi criada no component-->
+            <!-- two way databind -->
+        </div>
+        <div class="form-group">
+            <label for="file_name">Arquivo</label>
+            <input type="file" class="form-control" id="file_name" (change)="handlerFile($event.target.files[0])">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-primary btn-block" (click)="upload()">Upload</button>
+    </div>
+</div>
